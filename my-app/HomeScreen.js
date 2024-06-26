@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, ScrollView, Image, SafeAreaView, TouchableOpaci
 import React from 'react'
 import TransactionList from './components/TransactionList'
 import { FlatList } from 'react-native';
+import { ThemeContext, useTheme } from './ThemeContext';
+
 
 const transaction=[
   {
@@ -38,6 +40,7 @@ const transaction=[
 
 
 const HomeScreen = () => {
+  const {isDarkMode, toggleTheme}= useTheme();
   return (
     <SafeAreaView style={styles.container} >
     <ScrollView>
@@ -216,7 +219,8 @@ borderRadius:30,
 card:{
 width:40,
 marginTop:30,
-resizeMode: 'contain'
+resizeMode: 'contain',
+flex:1,marginLeft:20
 },
 
 title:{

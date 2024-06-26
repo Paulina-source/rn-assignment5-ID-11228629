@@ -5,11 +5,13 @@ import SettingsScreen from './SettingsScreen';
 import CardScreen from './CardScreen';
 import StatisticsScreen from './StatsScreen';
 import {Image} from 'react-native';
+import { ThemeProvider } from './ThemeContext';
 
 const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
+    <ThemeProvider>
     <NavigationContainer>
     <Tab.Navigator>
     <Tab.Screen 
@@ -83,5 +85,6 @@ export default function MyTabs() {
     
     </Tab.Navigator>
     </NavigationContainer>
+    </ThemeProvider>
   );
 }
